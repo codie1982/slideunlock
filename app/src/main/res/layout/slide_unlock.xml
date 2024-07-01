@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:id="@+id/motionLayout"
+    app:layoutDescription="@xml/slide_unlock_scene">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/slidePoint"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgSlideArrow"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:alpha="1"
+        android:elevation="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/_16092_thick_right_arrow_icon"
+        app:layout_constraintBottom_toBottomOf="@id/slidePoint"
+        app:layout_constraintEnd_toEndOf="@id/slidePoint"
+        app:layout_constraintStart_toStartOf="@id/slidePoint"
+        app:layout_constraintTop_toTopOf="@id/slidePoint" />
+
+    <ImageView
+        android:id="@+id/imgSlideSuccess"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:alpha="0"
+        android:elevation="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/_879883_achievement_check_mark_ok_success_icon"
+        app:layout_constraintBottom_toBottomOf="@id/slidePoint"
+        app:layout_constraintEnd_toEndOf="@id/slidePoint"
+        app:layout_constraintStart_toStartOf="@id/slidePoint"
+        app:layout_constraintTop_toTopOf="@id/slidePoint" />
+
+    <LinearLayout
+        android:id="@+id/unlockTextSection"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:alpha="1">
+        <TextView
+            android:id="@+id/unlockText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:text="Kilidi açmak için kaydırın"
+            android:textColor="@color/white"
+            android:alpha="1"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -1,5 +1,6 @@
 package com.example.slideunlock;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -8,8 +9,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity {
-
+public class MainActivity extends AppCompatActivity implements ISlideunlock {
+SlideUnLock slideUnlock;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +21,16 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        slideUnlock=  findViewById(R.id.slide_unlock);
+        slideUnlock.setListener(this);
+    }
+
+    @Override
+    public void onComplete() {
+        Intent intent = new Intent(this,SecondActivity.class);
+        startActivity(intent);
+        finish();
+
     }
 }
